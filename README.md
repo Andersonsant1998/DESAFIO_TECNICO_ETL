@@ -6,28 +6,28 @@ O projeto realiza a consolidação de transações financeiras e cadastro de cli
 
 📁 Estrutura do Repositório
 
-DESAFIO_TECNICO_ETL/
-│
-├── datasets/                     # Origem de dados e geradores
-│   ├── clientes.csv              # Cadastro de clientes em formato CSV
-│   ├── vendas.txt                # Transações financeiras em formato TXT posicional
-│   ├── gerando_csv.py            # Script Python para geração da massa de clientes
-│   └── gerando_txt.py            # Script Python para geração da massa de vendas
-│
-├── ETL/                          # Orquestração da Pipeline
-│   └── main.py                   # Script principal de execução do pipeline ETL
-│
-├── outputs/                      # Camada de entrega/persistência
-│   ├── balanco_produtos/         # Relatório financeiro acumulado por produto
-│   └── resumo_clientes/          # Relatório consolidado por cliente
-│
-├── teste_unitario_integração/    # Suíte de testes automatizados e evidências
-│   ├── log_teste_integracao.txt  # Evidências de sucesso do teste de integração
-│   ├── log_teste_unitario.txt    # Evidências de sucesso dos testes unitários
-│   ├── teste_integracao.py       # Teste de integração End-to-End (E2E)
-│   └── teste_unitario.py         # Testes unitários das funções e transformações
-│
-└── README.md                     # Documentação técnica do projeto
+    DESAFIO_TECNICO_ETL/
+    │
+    ├── datasets/                     # Origem de dados e geradores
+    │   ├── clientes.csv              # Cadastro de clientes em formato CSV
+    │   ├── vendas.txt                # Transações financeiras em formato TXT posicional
+    │   ├── gerando_csv.py            # Script Python para geração da massa de clientes
+    │   └── gerando_txt.py            # Script Python para geração da massa de vendas
+    │
+    ├── ETL/                          # Orquestração da Pipeline
+    │   └── main.py                   # Script principal de execução do pipeline ETL
+    │
+    ├── outputs/                      # Camada de entrega/persistência
+    │   ├── balanco_produtos/         # Relatório financeiro acumulado por produto
+    │   └── resumo_clientes/          # Relatório consolidado por cliente
+    │
+    ├── teste_unitario_integração/    # Suíte de testes automatizados e evidências
+    │   ├── log_teste_integracao.txt  # Evidências de sucesso do teste de integração
+    │   ├── log_teste_unitario.txt    # Evidências de sucesso dos testes unitários
+    │   ├── teste_integracao.py       # Teste de integração End-to-End (E2E)
+    │   └── teste_unitario.py         # Testes unitários das funções e transformações
+    │
+    └── README.md                     # Documentação técnica do projeto
 
 
 🛠️ Arquitetura e Explicação do Algoritmo
