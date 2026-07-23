@@ -1,0 +1,18 @@
+[47]
+2s
+# =========================================================================
+# EXECUTOR INTERATIVO
+# =========================================================================
+suite = unittest.TestLoader().loadTestsFromTestCase(TestPipelineETL)
+unittest.TextTestRunner(verbosity=2).run(suite)
+test_extract_clientes (__main__.TestPipelineETL.test_extract_clientes) ... ok
+test_extract_vendas (__main__.TestPipelineETL.test_extract_vendas) ... ok
+test_transform_balanco_produtos (__main__.TestPipelineETL.test_transform_balanco_produtos) ... ok
+test_transform_resumo_clientes_calculos (__main__.TestPipelineETL.test_transform_resumo_clientes_calculos) ... ok
+test_transform_resumo_clientes_trata_nulos (__main__.TestPipelineETL.test_transform_resumo_clientes_trata_nulos) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.247s
+
+OK
+<unittest.runner.TextTestResult run=5 errors=0 failures=0>
