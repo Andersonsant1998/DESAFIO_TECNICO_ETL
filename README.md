@@ -40,6 +40,7 @@ Os scripts gerando_csv.py e gerando_txt.py utilizam Python puro para gerar massa
 
 
 2. Leitura e Extração (Extract)
+3. 
     extract_clientes: Realiza a leitura do CSV de clientes aplicando schema explícito via StructType para otimizar o tempo de leitura e evitar inferência de tipos.
 
     extract_vendas: Realiza a leitura do arquivo TXT posicional utilizando spark.read.text() com fatiamento manual via F.substring:
@@ -55,8 +56,9 @@ Os scripts gerando_csv.py e gerando_txt.py utilizam Python puro para gerar massa
         data_venda: Posições 24 a 31 convertidas para o tipo data (yyyyMMdd).
 
 
-3. Transformações de Negócio (Transform)
-    transform_resumo_clientes:
+4. Transformações de Negócio (Transform)
+
+   transform_resumo_clientes:
 
         Broadcast Join: Como a tabela de clientes possui menor cardinalidade em relação às vendas, utilizamos F.broadcast(clientes) para eliminar a fase cara de Shuffle na rede.
 
@@ -70,7 +72,7 @@ Os scripts gerando_csv.py e gerando_txt.py utilizam Python puro para gerar massa
 
 
 
-4. Carga e Particionamento (Load)
+5. Carga e Particionamento (Load)
     load_data: Função reutilizável para persistência dos DataFrames.
 
     Particionamento Dinâmico: Aplica partitionBy("data_venda"), criando subdiretórios em disco no formato data_venda=YYYY-MM-DD. Essa estratégia otimiza consultas analíticas futuras (como via Amazon Athena) evitando Full Scans.
@@ -78,7 +80,7 @@ Os scripts gerando_csv.py e gerando_txt.py utilizam Python puro para gerar massa
     Suporta gravação nos formatos CSV (com cabeçalho) e Parquet.
 
 
-5. Resiliência e Ambientes (get_spark_session)
+6. Resiliência e Ambientes (get_spark_session)
 O código possui um gerenciador dinâmico de sessão PySpark: detecta automaticamente se está rodando localmente (Google Colab / Docker) ou em ambiente gerenciado AWS (AWS Glue / EMR), ajustando o driver e os parâmetros de shuffle conforme necessário.
 
 🧪 Suíte de Testes Automatizados
